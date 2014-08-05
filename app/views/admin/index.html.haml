@@ -1,0 +1,25 @@
+%h2 Admin Home
+= link_to 'SignOut', destroy_user_session_path, :method => :delete
+
+%h3 Instructors
+= form_tag '/admin/instructor_add', method: 'get' do
+  = label_tag 'Email:', nil, :style => 'display:inline;'
+  = text_field '', :email, :style => 'width:200px'
+  = submit_tag 'Add'
+
+- if flash[:add_message]
+  = flash[:add_message]
+
+%br
+
+- if @instructors.size == 0 
+  none
+- else
+  %table{:style => "border: 1px;", :border => "true"}
+    %tr
+      %th Email
+      %th 
+    - @instructors.each do |instructor|
+      %tr
+        %td= instructor.email
+        %td= link_to "delete", admin_instructor_delete_path(:email => instructor.email)

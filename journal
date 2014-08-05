@@ -1,0 +1,13 @@
+: Do 3 hours a day, should finish on day 40 with 15 days left till Fall quarter
+
+
+1: 8-05
+	55 days left
+	120 hours left
+
+	- plannnig hours	
+	- setting up new rails project
+	- setting up user management (devise)
+
+	devise:
+		rails g devise:views	# for custom devise views
