@@ -1,2 +1,60 @@
-%h1 Student#index
-%p Find me in app/views/student/index.html.haml
+%h2.inline= @user.name
+= link_to 'sign out', destroy_user_session_path, :method => :delete
+%hr
+
+%span.large Programs:
+
+%div.indent
+  %p
+  - @programs.each do |program|
+    %b= program.name
+
+    / %div.indent
+    / Announcements:
+
+    %div.indent
+      %p
+      Sections:
+
+      %div.indent
+        - program.sections.each do |section|
+          %p
+          %b= section.name
+
+          %div.indent
+            %p
+            Assignments:
+            %p
+            %div.indent
+              - section.assignments.each do |assignment|
+                %table.styleTable
+                  %tr
+                    %th Week
+                    %th Type
+                    %th Topic
+                    %th Direction
+                    %th Readings
+                    %th Resources
+                    %th Files
+                    %th Solutions
+                    %th Due Date
+                    %th Submit
+                    %th Status
+                    %th Grade
+                  %tr
+                    %td= assignment.week
+                    %td= assignment.thetype
+                    %td= assignment.topic
+                    %td= assignment.directions.html_safe
+                    %td= assignment.readings
+                    %td= assignment.resources
+                    %td= assignment.files
+                    %td= assignment.solutions
+                    %td= assignment.date_due
+                    %td
+                      = form_tag({action: :submit}, multipart: true) do
+                        = hidden_field_tag 'assignment_id', assignment.id
+                        = file_field_tag 'upload'
+                        = submit_tag 'submit'
+                    %td
+                    %td

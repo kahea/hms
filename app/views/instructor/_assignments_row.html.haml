@@ -1,0 +1,30 @@
+%div.indent
+  Assignments:
+  = link_to 'new', "#modalAssignmentsNew", :data => {:toggle=>"modal"}, :onclick => "$('#sectionNameHeader').html('#{section.name}'); $('#modalAssignmentsNew').find('#sectionId').val('#{section.id}');"
+  %p
+  %div.indent
+    - section.assignments.each do |assignment|
+      %table
+        %tr
+          %th Week
+          %th Type
+          %th Topic
+          %th Direction
+          %th Readings
+          %th Resources
+          %th Files
+          %th Solutions
+          %th Due Date
+          %th % Completed
+          %th % Average
+        %tr
+          %td= assignment.week
+          %td= assignment.thetype
+          %td= assignment.topic
+          %td= assignment.directions.html_safe
+          %td= assignment.readings
+          %td= assignment.resources
+          %td= assignment.files
+          %td= assignment.solutions
+
+      

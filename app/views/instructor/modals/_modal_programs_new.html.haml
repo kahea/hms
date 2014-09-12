@@ -1,0 +1,18 @@
+%div.modal#modalProgramsNew{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title New Program
+      %div.modal-body
+        = form_tag instructor_program_create_path(:template => "instructor/js/program_create.js.erb"), remote:true do 
+          %div#formNameDiv
+            = label_tag "Name:", nil, :class => 'control-label'
+            = text_field_tag "programName", nil, :class => 'form-control'
+            %span.help-block#formNameHelp
+          %p
+          = submit_tag "Submit", :class => 'btn btn-default'
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close

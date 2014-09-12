@@ -1,0 +1,8 @@
+
+<% if @program.errors.any? %>
+  $('#formNameDiv').addClass('has-error');
+  $('#formNameHelp').html('<%= @program.errors[:name][0] %>');
+<% else %>
+  $('#modalProgramsNew').modal('hide');
+  $('#programs-div').append("<%= j render partial: 'instructor/program_row', locals: {program: @program} %>")
+<% end %>

@@ -1,0 +1,32 @@
+%div.modal#myModal{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title New Program
+      %div.modal-body
+        //= render 'form', modal: true
+        = form_tag programs_create_path, remote:true do 
+          //%div.form-group
+          = label_tag "Name:", nil, :class => 'control-label'
+          = text_field_tag "name", "foo", :class => 'form-control'
+          %p
+          //%div.actions
+          = submit_tag "Submit", :class => 'btn btn-default'
+
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close
+
+%h2.inline= @user.name
+= link_to 'sign out', destroy_user_session_path, :method => :delete
+%hr
+%span.header Programs
+= link_to 'new', "#myModal", :data => {:toggle=>"modal"}
+
+
+%table.programs_table
+  - @programs.each do |program|
+    %tr
+      %td= program.name

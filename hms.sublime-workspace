@@ -1,0 +1,419 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 2004,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/home_controller.rb",
+			"settings":
+			{
+				"buffer_size": 393,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_notes.routes",
+			"settings":
+			{
+				"buffer_size": 1254,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/instructors/home/index.html.haml",
+			"settings":
+			{
+				"buffer_size": 168,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/instructors/home_controller.rb",
+			"settings":
+			{
+				"buffer_size": 81,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 292.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 391.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/higgz/dev/edu/hms/app/controllers/organization_controller.rb",
+		"/home/higgz/dev/edu/hms/app/controllers/application_controller.rb",
+		"/home/higgz/dev/edu/hms/_notes.assignment_page",
+		"/home/higgz/dev/edu/hms/app/views/instructor/programs/assignments/index.html.haml",
+		"/home/higgz/dev/edu/hms/app/controllers/instructor/programs/assignments_controller.rb",
+		"/home/higgz/dev/edu/hms/app/controllers/instructor/programs_controller.rb",
+		"/home/higgz/dev/edu/hms/app/views/instructor/programs/index.html.haml",
+		"/home/higgz/dev/edu/hms/model_notes",
+		"/home/higgz/dev/edu/hms/assignment_page.notes",
+		"/home/higgz/dev/edu/hms/general.notes",
+		"/home/higgz/dev/edu/hms/config/routes.rb",
+		"/home/higgz/dev/edu/hms/app/assets/stylesheets/application.css",
+		"/home/higgz/dev/edu/hms/app/views/instructor/index.html.haml",
+		"/home/higgz/dev/edu/hms/app/assets/stylesheets/instructor/programs.css.scss",
+		"/home/higgz/dev/edu/edurange/app/controllers/clouds_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/views/layouts/_navigation_links.html.erb",
+		"/home/higgz/dev/edu/edurange/app/controllers/groups_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/controllers/players_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/controllers/roles_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/models/concerns/aws.rb",
+		"/home/higgz/dev/edu/edurange/app/controllers/subnets_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/controllers/instances_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/controllers/scenarios_controller.rb",
+		"/home/higgz/dev/edu/edurange/app/models/player.rb",
+		"/home/higgz/dev/edu/edurange/lib/yml_record.rb",
+		"/home/higgz/dev/edu/edurange/app/views/players/index.html.haml",
+		"/home/higgz/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/higgz/dev/edu/edurange/app/models/scenario.rb",
+		"/home/higgz/dev/edu/hms/app/controllers/instructor_controller.rb",
+		"/home/higgz/dev/edu/hms/app/controllers/students_controller.rb",
+		"/home/higgz/dev/edu/hms/db/schema.rb",
+		"/home/higgz/dev/edu/hms/db/migrate/20140807184514_create_programs.rb",
+		"/home/higgz/dev/edu/hms/db/migrate/20140807182925_create_class.rb",
+		"/home/higgz/dev/edu/hms/app/views/admin/index.html.haml",
+		"/home/higgz/dev/edu/homeworker/app/views/instructor/index.html.haml",
+		"/home/higgz/Dropbox/work/ross/php/sos-adult-abundance.php",
+		"/home/higgz/Dropbox/work/ross/abundance.js",
+		"/home/higgz/dev/edu/homeworker/app/models/user.rb",
+		"/home/higgz/dev/edu/homeworker/app/controllers/admin_controller.rb",
+		"/home/higgz/dev/edu/homeworker/config/routes.rb",
+		"/home/higgz/dev/edu/homeworker/app/controllers/application_controller.rb",
+		"/home/higgz/dev/edu/homeworker/app/controllers/home_controller.rb",
+		"/home/higgz/dev/edu/homeworker/app/views/admin/index.html.haml",
+		"/home/higgz/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/higgz/dev/edu/homeworker/app/views/home/index.html.haml",
+		"/home/higgz/dev/edu/homeworker/db/migrate/20140805202757_add_organization_to_users.rb",
+		"/home/higgz/dev/edu/homeworker/db/schema.rb",
+		"/home/higgz/dev/edu/homeworker/db/migrate/20140805185634_add_role_to_users.rb",
+		"/home/higgz/dev/edu/homeworker/app/views/layouts/application.html.erb",
+		"/home/higgz/dev/edu/homeworker/config/environments/development.rb",
+		"/home/higgz/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/higgz/dev/edu/homeworker/Gemfile",
+		"/home/higgz/app/hms/db/migrate/20140714221006_create_users.rb",
+		"/home/higgz/dropbox/dev/www/homework/outline",
+		"/home/higgz/app/hms/Gemfile",
+		"/home/higgz/app/hms/db/migrate/20140714220729_do_nothing.rb",
+		"/home/higgz/ruby/foo.rb",
+		"/home/higgz/edurange/src/edurange/app/models/concerns/provider.rb",
+		"/home/higgz/edurange/src/edurange/app/models/scenario.rb",
+		"/home/higgz/edurange/src/edurange/app/models/concerns/aws.rb",
+		"/home/higgz/www/sos/survey/index.html",
+		"/home/higgz/edu/ilc/summer2014",
+		"/home/higgz/edu/ilc/gradingsoftware",
+		"/home/higgz/dev/lang/parser/main.py",
+		"/home/higgz/dev/sublime-text/notes",
+		"/home/higgz/dev/lang/parser/parser.grammar",
+		"/home/higgz/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/higgz/.config/sublime-text-2/Packages/Package Control/Package Control.sublime-settings",
+		"/home/higgz/dropbox/dev/www/sos/survey/php/login.php",
+		"/home/higgz/dropbox/dev/www/sos/survey/index.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"redirect_to",
+			"edurange",
+			"form_tag",
+			"token",
+			"geomean",
+			"jgeomean",
+			"Insufficient",
+			"class",
+			"enter",
+			"+j",
+			"symbol",
+			"puts",
+			"table",
+			"initialize",
+			"rule",
+			"id",
+			"ospc",
+			"spcs",
+			"sp"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 2004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/home_controller.rb",
+					"settings":
+					{
+						"buffer_size": 393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								360,
+								360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_notes.routes",
+					"settings":
+					{
+						"buffer_size": 1254,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								545,
+								545
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/instructors/home/index.html.haml",
+					"settings":
+					{
+						"buffer_size": 168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/controllers/instructors/home_controller.rb",
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 266.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/higgz/dropbox/dev/www/sos/survey/php/login.php"
+			],
+			[
+				"login",
+				"/home/higgz/dropbox/dev/www/sos/survey/php/login.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true
+}

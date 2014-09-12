@@ -1,0 +1,2 @@
+module Instructors::HomeHelper
+end

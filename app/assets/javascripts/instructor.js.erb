@@ -1,0 +1,52 @@
+
+$(document).ready(function() {
+
+  $('#modalProgramsNew').on('hide.bs.modal', function (e) {
+    $('#formNameDiv').removeClass('has-error');
+    $('#formNameField').val('');
+    $('#formNameHelp').html('');
+  });
+
+  $('#modalStudentsAdd').on('hide.bs.modal', function (e) {
+    $('#formEmailDiv').removeClass('has-error');
+    $('#userEmail').val('');
+    $('#userEmailHelp').html('');
+  });
+
+  $('#dueDatePicker').datepicker();
+  $('#solutionsDatePicker').datepicker();
+
+  // $('#datePicker').datepicker({
+    // beforeShow: function(input) {
+      // $(input).css('background-color','#ff0');
+    // },
+    // onSelect: function(dateText, obj) {
+      // $(this).css('background-color','');
+      // alert('Selected: ' + dateText +
+        // "\n\nid: " + obj.id +
+        // "\nselectedDay: " + obj.selectedDay +
+        // "\nselectedMonth: " + obj.selectedMonth +
+        // "\nselectedYear: " + obj.selectedYear);
+    // },
+    // onClose: function(dateText, obj) {
+      // $(this).css('background-color','');
+    // }
+  // });
+
+
+  // $('#sectionsNewButton').click(function (e) {
+    // alert($(this).data('sname'))
+    // $('#formSectionName').val($(this).data('sname'))
+    // $('#pname').html($(this).data('sname'))
+    // alert('hi')
+  // });
+
+  // $('.mybutton').each(function(i, obj) {
+    //alert(obj.id);
+    // obj.click(function (e) {
+      //alert('hi');
+    // });
+    // alert(obj.click)
+  // });
+
+});

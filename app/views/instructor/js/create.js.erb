@@ -1,0 +1,10 @@
+
+
+<% if @errors.any? %>
+  <% @formErrors.each do |formError| %>
+    $('#<% formError.div %>').addClass('has-error');
+    $('#<% formError.helpDiv %>').html('<%= formError.message %>');
+  <% end %>
+<% else %>
+// remove this
+//

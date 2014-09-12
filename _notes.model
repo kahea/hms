@@ -1,0 +1,50 @@
+
+
+class
+  name
+  instructor_id
+  organization
+
+instructor_privileges
+  class_id
+  istructor_id
+  resource      
+  permissions
+
+student_group
+  name
+  student_id
+  instructor_id
+
+program_students
+  program_name
+  user_id
+
+assignment
+  name
+  type    # homework, quiz, test, etc
+
+-----------------------------------------------------------------
+Views
+-----------------------------------------------------------------
+Program
+  - list of instructors and their priviliges
+  - list of students in program
+  - list of Assignments
+
+Program instructor-view
+  - create, add, remove, from student group
+  - create, add, remove, assignment
+  - grade statistics
+
+
+- Show grade adjective next to assignemnt, bold letters in approriate color, red-poor green:excellent
+
+
+#, :style => 'display:inline;'
+
+    create_table :classes do |t|
+      t.string :name, null: false
+      t.string :organization, null:false
+      t.integer :instructor_id, null: false
+

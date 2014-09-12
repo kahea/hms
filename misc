@@ -1,0 +1,47 @@
+  def respond(data)
+    respond_to do |format|
+      format.js { render :template => data[:template], :layout => false }
+    end
+  end
+
+  def create
+    data = self.send("#{params[:resource]}_create", "foo")
+    data[:template] = 'instructor/create.js.erb'
+    respond(data)
+  end
+
+  def program_user_create(data)
+    data = {:template => "instructor/create.js.erb"}
+    errors = {}
+    return data
+  end
+
+            /= select_tag "due_month", options_for_select([["01-January",1],["02-February",2],["03-March",3],["04-April",4],["05-May",5],["06-June",6],["07-July",7],["08-August",8],["09-September",9],["10-October",10],["11-November",11],["12-December",12]])
+
+            = datetime_select "due_time", nil
+
+
+%w[a b c d e].each_with_index.map { |x,i| [x,i]}
+    
+
+            /= select_tag "due_day", options_for_select('01'..'31')
+            /\-
+            /= select_tag "due_hour", options_for_select('01'..'12')
+            /= select_tag "due_minute", options_for_select(%w[00 15 30 45])
+            /= select_tag "due_ampm", options_for_select(%w[am pm])
+
+    due_time = DateTime.new(
+      params[:due_time]["(1i)"].to_i, 
+      params[:due_time]["(2i)"].to_i, 
+      params[:due_time]["(3i)"].to_i, 
+      params[:due_time]["(4i)"].to_i, 
+      params[:due_time]["(5i)"].to_i
+    )
+
+    solutions_post_time = DateTime.new(
+      params[:solutions_post_time]["(1i)"].to_i, 
+      params[:solutions_post_time]["(2i)"].to_i, 
+      params[:solutions_post_time]["(3i)"].to_i, 
+      params[:solutions_post_time]["(4i)"].to_i, 
+      params[:solutions_post_time]["(5i)"].to_i
+    )

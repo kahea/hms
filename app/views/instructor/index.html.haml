@@ -1,7 +1,15 @@
-%h1 Instructor#index
-%p Find me in app/views/instructor/index.html.haml
+= render partial: '/instructor/modals/modal_programs_new'
+= render partial: '/instructor/modals/modal_sections_new'
+= render partial: '/instructor/modals/modal_students_new'
+= render partial: '/instructor/modals/modal_assignments_new'
 
-= link_to 'SignOut', destroy_user_session_path, :method => :delete
+%h2.inline= @user.name
+= link_to 'sign out', destroy_user_session_path, :method => :delete
+%hr
 
+%span.large Programs:
+= link_to 'new', "#modalProgramsNew", :data => {:toggle=>"modal"}
 
-continue here, making classes and adding students
+%div.indent#programs-div
+  - @programs.each do |program|
+    = render partial: 'program_row', locals: {program: program}

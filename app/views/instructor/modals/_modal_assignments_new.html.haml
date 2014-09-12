@@ -1,0 +1,59 @@
+%div.modal#modalAssignmentsNew{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title.inline New Assignment - 
+        %h3#sectionNameHeader.inline
+
+      %div.modal-body
+        = form_tag instructor_assignment_create_path(:template => "instructor/js/assignment_create.js.erb"), remote:true do 
+          %div#formNameDiv
+            = hidden_field_tag 'sectionId'
+            = label_tag "Type:"
+            = select_tag "type", options_for_select(%w[Homework Lab])
+            %p
+            = label_tag "Due Date:"
+            /= datetime_select "due_time", nil
+            = text_field_tag 'dueDatePicker', nil
+            %p
+            /= label_tag "Block Late Submissions"
+            / = date_select "foo", nil
+            %p
+            = label_tag "Topic:"
+            %br
+            = text_area_tag "topic", nil, :class => 'form-control'
+            %br
+            = label_tag "Directions:"
+            %br
+            = text_area_tag "directions", nil, :class => 'form-control'
+            %br
+            = label_tag "Readings:"
+            %br
+            = text_area_tag "readings", nil, :class => 'form-control'
+            %br
+            = label_tag "Resources:"
+            %br
+            = text_area_tag "resources", nil, :class => 'form-control'
+            %br
+            = label_tag "Files:"
+            = link_to 'upload'
+            = text_area_tag "files", nil, :class => 'form-control'
+            %p
+            %b Solutions:
+            = link_to 'upload'
+            = text_area_tag "solutions", nil, :class => 'form-control'
+            %br
+            %b Solutions Post Date:
+            /= datetime_select "solutions_post_time", nil
+            = text_field_tag 'solutionsDatePicker', nil
+            
+            / = label_tag "Name:", nil, :class => 'control-label'
+            /= text_field_tag "programName", nil, :class => 'form-control'
+            %span.help-block#formNameHelp
+          %p
+          = submit_tag "Submit", :class => 'btn btn-default'
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close

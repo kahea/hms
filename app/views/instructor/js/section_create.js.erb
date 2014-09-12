@@ -1,0 +1,7 @@
+<% if @section.errors.any? %>
+  $('#formNameDivSection').addClass('has-error');
+  $('#formNameHelpSection').html('<%= @section.errors[:name][0] %>');
+<% else %>
+  $('#myModalSectionsNew').modal('hide');
+  $('#<%= "#{@section.program.name}-sections-div" %>').append("<%= j render partial: 'instructor/section_row', locals: {section: @section} %>");
+<% end %>

@@ -1,0 +1,11 @@
+
+
+
+difference user and instructor/student
+  
+
+program_permissions
+  user_id
+  'resource'  section,gruups
+  'permission'  create, read, update, delete
+

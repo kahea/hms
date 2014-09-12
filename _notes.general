@@ -1,0 +1,24 @@
+
+
+program_user
+  user_id, program_id
+
+section_user
+  user_id, program_id
+
+
+program
+  has_many students, through student_groups 
+
+section
+  has_many students, through student_groups
+
+
+
+
+- be able to comment on homework, programs, etc..
+
+Could go beyond ust homework assignments and instead act as an interactive syllabus
+
+  - for class times and scheduling in general
+    :update dynamically, be aware when instructor wont be there

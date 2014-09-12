@@ -1,15 +1,27 @@
 Rails.application.routes.draw do
-  get 'instructor/index'
-
-  root to: "home#index"
-
-  get 'admin/index'
-  get 'admin/instructor_delete'
-  get 'admin/instructor_add'
 
   get 'student/index'
 
-  get 'home/index'
+  get 'instructor', to: 'instructor#index'
+  namespace :instructor do
+    post  'program_create'
+    get   'program_destroy'
+    post  'section_create'
+    get   'section_destroy'
+    post  'program_user_create'
+    get   'program_user_destroy'
+    post  'assignment_create'
+    get   'assignment_destroy'
+  end
+
+  get 'student', to: 'student#index'
+  namespace :student do
+    post 'submit'
+  end
+
+  get 'grader', to: 'grader#index'
+
+  root to: "home#index"
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,5 @@
+%p
+%div{:id => "students-#{program_user.id}-div"}
+  = program_user.user.email
+  = link_to 'del', instructor_program_user_destroy_path(:program_user => program_user), remote: true
+

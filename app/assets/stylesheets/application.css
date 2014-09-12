@@ -1,4 +1,4 @@
-/*
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,6 +10,37 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui/datepicker
  *= require_tree .
  *= require_self
  */
+
+.header {
+  font-size:18px;
+  font-weight:bold;
+}
+
+dl {
+  margin-left:12px;
+}
+
+body {
+  margin:12px;
+}
+
+.inline {
+  display:inline;
+}
+
+.indent {
+  margin-left:12px;
+}
+
+.large {
+  font-size:18px;
+}
+
+.styleTable { border: 1px solid black; border-collapse: separate; }
+.styleTable TD { border: 1px solid black; font-weight: normal !important; padding: .4em; border-top-width: 0px !important; }
+.styleTable TH { border: 1px solid black; text-align: center; padding: .8em .4em; }
+.styleTable TD.first, .styleTable TH.first { border: 1px solid black; border-left-width: 0px !important; }

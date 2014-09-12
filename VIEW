@@ -1,0 +1,19 @@
+
+
+
+
+admin
+	instructor
+		new
+
+
+instructor
+	program
+		new
+		instructor
+			new
+
+
+
+instructor.program.new
+

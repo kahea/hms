@@ -1,0 +1,6 @@
+%p
+%div{ :id => "sections-#{section.name}-div"}
+  %b= section.name
+  = link_to 'del', instructor_section_destroy_path(:section => section), remote: true
+  %p
+  = render partial: 'assignments_row', locals: {section: section}

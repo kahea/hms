@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805202757) do
+ActiveRecord::Schema.define(version: 20140911021934) do
+
+  create_table "assignments", force: true do |t|
+    t.integer  "section_id"
+    t.integer  "user_id"
+    t.integer  "week"
+    t.string   "thetype"
+    t.string   "topic"
+    t.string   "directions"
+    t.string   "readings"
+    t.string   "resources"
+    t.string   "files"
+    t.string   "solutions"
+    t.date     "date_due"
+    t.date     "date_solutions_post"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "program_users", force: true do |t|
+    t.integer  "program_id", null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programs", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", force: true do |t|
+    t.integer  "program_id", null: false
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "student_assignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "assignment_id"
+    t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",        null: false
@@ -24,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140805202757) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",                   default: "student"

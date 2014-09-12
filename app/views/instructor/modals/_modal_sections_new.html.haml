@@ -1,0 +1,21 @@
+%div.modal#myModalSectionsNew{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title.inline New Section - 
+        %h3#programNameHeader.inline
+
+      %div.modal-body
+        = form_tag instructor_section_create_path, remote:true do 
+          %div#formNameDivSection
+            = hidden_field_tag 'programId'
+            = label_tag "Name:", nil, :class => 'control-label'
+            = text_field_tag "sectionName", nil, :class => 'form-control'
+            %span.help-block#formNameHelpSection
+          %p
+          = submit_tag "Submit", :class => 'btn btn-default'
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close

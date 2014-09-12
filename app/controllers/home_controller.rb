@@ -5,12 +5,15 @@ class HomeController < ApplicationController
     if user_signed_in?
       user = User.find(current_user.id)
       if user.is_admin?
-        redirect_to '/admin/index'
+        render '/admin/home'
       elsif user.is_instructor?
-        redirect_to '/instructor/index'
+        redirect_to instructor_path
+      elsif user.is_student?
+        redirect_to student_path
+      elsif user.is_grader?
+        redirect_to grader_path
       end
     end
-    
   end
 
 end

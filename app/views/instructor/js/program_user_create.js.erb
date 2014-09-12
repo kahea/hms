@@ -1,0 +1,11 @@
+
+<% if @err %>
+  $('#modalStudentsAdd').find('#formEmailDiv').addClass('has-error');
+  $('#modalStudentsAdd').find('#userEmailHelp').html('<%= @err%>');
+<% elsif @program_user.errors.any? %>
+  $('#modalStudentsAdd').find('#formEmailDiv').addClass('has-error');
+  $('#modalStudentsAdd').find('#userEmailHelp').html('<%= @program_user.errors[:user_id][0]  %>');
+<% else %>
+  $('#modalStudentsAdd').modal('hide');
+  $('#<%= "#{@program_user.program.name}-students-div" %>').append("<%= j render partial: 'instructor/program_user_row', locals: {program_user: @program_user} %>");
+<% end %>
