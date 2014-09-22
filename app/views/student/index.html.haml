@@ -1,12 +1,14 @@
+= render partial: '/student/modals/modal_grade_new'
+= render partial: '/student/modals/modal_comments_view'
+
 %h2.inline= @user.name
 = link_to 'sign out', destroy_user_session_path, :method => :delete
 %hr
 
 %span.large Programs:
-
 %div.indent
   %p
-  - @programs.each do |program|
+  - @programs_student.each do |program|
     %b= program.name
 
     / %div.indent
@@ -26,35 +28,77 @@
             Assignments:
             %p
             %div.indent
-              - section.assignments.each do |assignment|
-                %table.styleTable
-                  %tr
-                    %th Week
-                    %th Type
-                    %th Topic
-                    %th Direction
-                    %th Readings
-                    %th Resources
-                    %th Files
-                    %th Solutions
-                    %th Due Date
-                    %th Submit
-                    %th Status
-                    %th Grade
-                  %tr
+              %table
+                %tr
+                  %th Week
+                  %th Name
+                  %th Description
+                  %th Due Date
+                  %th Submit
+                  %th Status
+                  %th Grade
+                - section.section_assignments.each do |assignment|
+                  %tr{ class: cycle("odd-row", "even-row")}
                     %td= assignment.week
-                    %td= assignment.thetype
-                    %td= assignment.topic
-                    %td= assignment.directions.html_safe
-                    %td= assignment.readings
-                    %td= assignment.resources
-                    %td= assignment.files
-                    %td= assignment.solutions
-                    %td= assignment.date_due
+                    %td= assignment.name
+                    %td= assignment.description
+                    %td= assignment.datetime_due
                     %td
                       = form_tag({action: :submit}, multipart: true) do
                         = hidden_field_tag 'assignment_id', assignment.id
                         = file_field_tag 'upload'
                         = submit_tag 'submit'
+                    - if @user.section_assignment_submissions.find_by(section_assignment: assignment.id)
+                      %td submitted
+                    - else
+                      %td not-submitted
                     %td
-                    %td
+
+- if @programs_assistant.size > 0
+  %span.large Grading:
+
+%div.indent
+  %p
+  - @programs_assistant.each do |program|
+    %b= program.name
+
+    %div.indent
+      %p
+      Sections:
+
+      %div.indent
+        - program.sections.each do |section|
+          %p
+          %b= section.name
+
+          %div.indent
+            - section.section_assignments.each do |assignment|
+              %p
+              = assignment.name
+
+              %div.indent
+                %table
+                  %tr
+                    %th ID
+                    %th File
+                    %th Date
+                    %th Graded
+                    %th Quality
+                    %th Comments
+                    %th
+                    %th
+                  - assignment.section_assignment_submissions.each do |submission|
+                    %tr{ class: cycle("odd-row", "even-row")}
+                      %td= submission.user.name
+                      %td= link_to submission.filename, action: :download, submission: submission
+                      %td= submission.created_at
+                      - if submission.section_assignment_submission_grades.first
+                        %td yes
+                        %td= submission.section_assignment_submission_grades.first.quality
+                        %td= link_to 'view', student_view_comments_path(submission: submission), remote: true
+                        %td= link_to 'edit'
+                      - else
+                        %td no
+                        %td= link_to 'grade', "#modalGradeNew", :data => {:toggle=>"modal"}, :onclick => "$('#modalGradeNew').find('#sectionNameHeader').text('#{section.name}'); $('#modalGradeNew').find('#submissionNameHeader').text('#{submission.section_assignment.name}'); $('#modalGradeNew').find('#sectionAssignmentSubmissionId').val('#{submission.id}');"
+                        %td
+                        %td

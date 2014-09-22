@@ -1,0 +1,6 @@
+
+<% if @grade.errors.any? %>
+  $('#modalGradeNew').find('#error').text('<%= @grade.errors[:quality][0]  %>');
+<% else %>
+  $('#modalGradeNew').modal('hide');
+<% end %>

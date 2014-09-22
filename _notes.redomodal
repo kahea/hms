@@ -1,0 +1,90 @@
+
+user
+  integer     :role   [admin, instructor, other]
+
+program
+  has_many    :sections, program_users
+
+program_user
+  belongs_to  :progam
+  belongs_to  :user
+  integer     :role   [instructor, assistant, student]
+  has_many    :program_permissions
+
+program_permission
+  belongs_to  :program_user
+  string      :resource     [section, homework]
+  integer     :permission   [create, read, update, delete]
+
+section
+  belongs_to  :program
+  has_many    :assignments
+  has_many    :students, through :section_students
+  null: false
+
+section_user
+  belongs_to  :section
+  belongs_to  :user
+  integer     :role    [instructor, assistant, student]
+
+section_permission
+  belongs_to  :program_user
+  string      :resource     [section_assignment, section_assignment_submission]
+  integer     :permission   [create, read, update, delete]
+
+section_assignment
+  belongs_to  :section
+  has_many    :section_assignment_submissions
+
+section_assignment_submission
+  belongs_to  :section_assignnment
+  belongs_to  :user
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+
+
+class CreateProgramUsers < ActiveRecord::Migration
+  def change
+    create_table :program_users do |t|
+      t.belongs_to    :program, null: false
+      t.belongs_to    :user, null: false
+      t.timestamps
+    end
+  end
+end
+
+class CreateAssignments < ActiveRecord::Migration
+  def change
+    create_table :assignments do |t|
+      t.belongs_to  :section
+      t.belongs_to  :user
+
+      t.integer     :week
+      t.string      :thetype
+      t.string      :topic
+      t.string      :directions
+      t.string      :readings
+      t.string      :resources
+      t.string      :files
+      t.string      :solutions
+
+      t.date        :date_due
+      t.date        :date_solutions_post
+
+      t.timestamps
+    end
+  end
+end
+
+class CreateStudentAssignments < ActiveRecord::Migration
+  def change
+    create_table :student_assignments do |t|
+      t.belongs_to    :user
+      t.belongs_to    :assignment
+      t.string        :filename
+      t.timestamps
+    end
+  end
+end

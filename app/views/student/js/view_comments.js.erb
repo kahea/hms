@@ -1,0 +1,8 @@
+
+$('#modalCommentsView').find('#title').text('<%= @grade.section_assignment_submission.section_assignment.section.program.name %>' + ' - ' + '<%= @grade.section_assignment_submission.section_assignment.section.name %>' + ' - ' + '<%= @grade.section_assignment_submission.section_assignment.name %>' + ' - ' + '<%= @grade.section_assignment_submission.user.name %>');
+
+$('#modalCommentsView').find('#comments').text('<%= @grade.comments %>');
+
+$('#modalCommentsView').modal('toggle');
+
+//alert('<%= @comments %>')

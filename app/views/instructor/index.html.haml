@@ -2,6 +2,7 @@
 = render partial: '/instructor/modals/modal_sections_new'
 = render partial: '/instructor/modals/modal_students_new'
 = render partial: '/instructor/modals/modal_assignments_new'
+= render partial: '/instructor/modals/modal_assistants_new'
 
 %h2.inline= @user.name
 = link_to 'sign out', destroy_user_session_path, :method => :delete

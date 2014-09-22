@@ -1,0 +1,9 @@
+$('#<%= "section-assignment-table-row-#{@section_assignment.id}" %>').remove();
+$('#<%= "section-assignments-table-#{@section_assignment.section.id}" %>').find('tr').each(function (index) {
+  if (index %2 == 0) {
+    $(this).removeClass().addClass('odd-row');
+  }
+  else {
+    $(this).removeClass().addClass('even-row');
+  }
+});

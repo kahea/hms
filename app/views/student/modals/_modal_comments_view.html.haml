@@ -1,0 +1,15 @@
+%div.modal#modalCommentsView{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title.inline#title
+      %div.modal-body
+        %b Comments:
+        %br
+        %div#comments
+        
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close

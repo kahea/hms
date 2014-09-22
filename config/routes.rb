@@ -6,20 +6,22 @@ Rails.application.routes.draw do
   namespace :instructor do
     post  'program_create'
     get   'program_destroy'
+    post  'program_user_student_create'
+    post  'program_user_assistant_create'
+    get   'program_user_destroy'
     post  'section_create'
     get   'section_destroy'
-    post  'program_user_create'
-    get   'program_user_destroy'
-    post  'assignment_create'
-    get   'assignment_destroy'
+    post  'section_assignment_create'
+    get   'section_assignment_destroy'
   end
 
   get 'student', to: 'student#index'
   namespace :student do
     post 'submit'
+    get  'download'
+    post 'grade'
+    get  'view_comments'
   end
-
-  get 'grader', to: 'grader#index'
 
   root to: "home#index"
 

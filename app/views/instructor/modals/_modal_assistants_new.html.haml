@@ -1,14 +1,14 @@
-%div.modal#modalStudentsAdd{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+%div.modal#modalAssistantsAdd{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
   %div.modal-dialog
     %div.modal-content
       %div.modal-header
         %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
           &times;
-        %h3.modal-title.inline New Student -
+        %h3.modal-title.inline New Assistant -
         %h3#modalProgramName.inline
 
       %div.modal-body
-        = form_tag instructor_program_user_student_create_path, remote:true do 
+        = form_tag instructor_program_user_assistant_create_path, remote:true do 
           %div#formEmailDiv
             = hidden_field_tag 'programId'
             = label_tag "ID:", nil, :class => 'control-label'

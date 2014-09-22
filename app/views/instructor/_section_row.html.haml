@@ -3,4 +3,20 @@
   %b= section.name
   = link_to 'del', instructor_section_destroy_path(:section => section), remote: true
   %p
-  = render partial: 'assignments_row', locals: {section: section}
+
+  %div.indent
+    Assignments:
+    = link_to 'new', "#modalAssignmentsNew", :data => {:toggle=>"modal"}, :onclick => "$('#sectionNameHeader').html('#{section.name}'); $('#modalAssignmentsNew').find('#sectionId').val('#{section.id}');"
+    %p
+    %div.indent
+      %table{ id: "section-assignments-table-#{section.id}"}
+        %tr
+          %th Week
+          %th Name
+          %th Description
+          %th Due Date
+          %th % Completed
+          %th % Average
+          %th
+        - section.section_assignments.each_with_index do |section_assignment, cnt|
+          = render partial: 'assignments_row', locals: {section_assignment: section_assignment, cnt: cnt}

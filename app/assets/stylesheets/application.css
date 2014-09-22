@@ -1,4 +1,4 @@
-
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require jquery-ui/datepicker
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
@@ -40,7 +41,33 @@ body {
   font-size:18px;
 }
 
+table {
+  border-spacing: 4px;
+}
+
+th {
+  padding: 5px;
+  background-color: #C0C0C0 ;
+}
+
+tr {
+  padding: 5px;
+}
+
+td {
+  padding: 5px;
+}
+
+.odd-row {
+  background-color: white;
+}
+
+.even-row {
+  background-color: #F0F0F0 ;
+}
+
 .styleTable { border: 1px solid black; border-collapse: separate; }
 .styleTable TD { border: 1px solid black; font-weight: normal !important; padding: .4em; border-top-width: 0px !important; }
 .styleTable TH { border: 1px solid black; text-align: center; padding: .8em .4em; }
 .styleTable TD.first, .styleTable TH.first { border: 1px solid black; border-left-width: 0px !important; }
+

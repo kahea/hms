@@ -16,5 +16,13 @@
     Students:
     = link_to 'new', "#modalStudentsAdd", :data => {:toggle=>"modal"}, :onclick => "$('#modalProgramName').html('#{program.name}'); $('#modalStudentsAdd').find('#programId').val('#{program.id}');"
     %div.indent{:id => "#{program.name}-students-div"}
-      - program.program_users.each do |program_user|
-        = render partial: 'instructor/program_user_row', locals: {program_user: program_user}
+      - program.program_users.where(role: 3).each do |program_user|
+        = render partial: 'instructor/student_row', locals: {program_user: program_user}
+
+  %p
+  %div.indent
+    Assistants:
+    = link_to 'new', "#modalAssistantsAdd", :data => {:toggle=>"modal"}, :onclick => "$('#modalAssistantsAdd').find('#modalProgramName').html('#{program.name}'); $('#modalAssistantsAdd').find('#programId').val('#{program.id}');"
+    %div.indent{:id => "#{program.name}-assistants-div"}
+      - program.program_users.where(role: 2).each do |program_user|
+        = render partial: 'instructor/assistant_row', locals: {program_user: program_user}

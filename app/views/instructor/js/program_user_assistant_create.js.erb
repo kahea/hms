@@ -1,0 +1,10 @@
+<% if @err %>
+  $('#modalAssistantsAdd').find('#formEmailDiv').addClass('has-error');
+  $('#modalAssistantsAdd').find('#userEmailHelp').html('<%= @err%>');
+<% elsif @program_user.errors.any? %>
+  $('#modalAssistantsAdd').find('#formEmailDiv').addClass('has-error');
+  $('#modalAssistantsAdd').find('#userEmailHelp').html('<%= @program_user.errors[:user_id][0]  %>');
+<% else %>
+  $('#modalAssistantsAdd').modal('hide');
+  $('#<%= "#{@program_user.program.name}-assistants-div" %>').append("<%= j render partial: 'instructor/assistant_row', locals: {program_user: @program_user} %>");
+<% end %>

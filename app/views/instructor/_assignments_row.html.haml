@@ -1,30 +1,15 @@
-%div.indent
-  Assignments:
-  = link_to 'new', "#modalAssignmentsNew", :data => {:toggle=>"modal"}, :onclick => "$('#sectionNameHeader').html('#{section.name}'); $('#modalAssignmentsNew').find('#sectionId').val('#{section.id}');"
-  %p
-  %div.indent
-    - section.assignments.each do |assignment|
-      %table
-        %tr
-          %th Week
-          %th Type
-          %th Topic
-          %th Direction
-          %th Readings
-          %th Resources
-          %th Files
-          %th Solutions
-          %th Due Date
-          %th % Completed
-          %th % Average
-        %tr
-          %td= assignment.week
-          %td= assignment.thetype
-          %td= assignment.topic
-          %td= assignment.directions.html_safe
-          %td= assignment.readings
-          %td= assignment.resources
-          %td= assignment.files
-          %td= assignment.solutions
 
-      
+- if cnt.odd?
+  - theclass = "odd-row"
+- else
+  - theclass = "even-row"
+
+/ %tr{ class: cycle("odd-row", "even-row")}
+%tr{ id: "section-assignment-table-row-#{section_assignment.id}", class: theclass}
+  %td= section_assignment.week
+  %td= section_assignment.name
+  %td= section_assignment.description
+  %td= section_assignment.datetime_due
+  %td
+  %td
+  %td= link_to 'del', instructor_section_assignment_destroy_path(section_assignment: section_assignment.id), remote: true

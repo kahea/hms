@@ -1,0 +1,11 @@
+
+<% if @err %>
+  //$('#modalAssignmentsNew').find('#formEmailDiv').addClass('has-error');
+  //$('#modalAssignmentsNew').find('#userEmailHelp').html('<%= @err%>');
+<% elsif @section_assignment.errors.any? %>
+  //$('#modalAssignmentsNew').find('#formEmailDiv').addClass('has-error');
+  //$('#modalAssignmentsNew').find('#userEmailHelp').html('<%= @program_user.errors[:user_id][0]  %>');
+<% else %>
+  $('#modalAssignmentsNew').modal('hide');
+  $('#<%= "section-assignments-table-#{@section_assignment.section.id}" %>').append("<%= j render partial: 'instructor/assignments_row', locals: {section_assignment: @section_assignment, cnt: @cnt} %>");
+<% end %>

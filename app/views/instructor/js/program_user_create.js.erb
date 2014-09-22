@@ -7,5 +7,5 @@
   $('#modalStudentsAdd').find('#userEmailHelp').html('<%= @program_user.errors[:user_id][0]  %>');
 <% else %>
   $('#modalStudentsAdd').modal('hide');
-  $('#<%= "#{@program_user.program.name}-students-div" %>').append("<%= j render partial: 'instructor/program_user_row', locals: {program_user: @program_user} %>");
+  $('#<%= "#{@program_user.program.name}-students-div" %>').append("<%= j render partial: 'instructor/student_row', locals: {program_user: @program_user} %>");
 <% end %>

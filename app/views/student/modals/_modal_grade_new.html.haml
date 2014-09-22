@@ -1,0 +1,30 @@
+%div.modal#modalGradeNew{ :tabindex => "-1", :role => "dialog", "aria-labelledby" => "myModalLabel", "aria-hidden" => "true"}
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
+          &times;
+        %h3.modal-title.inline New Grade - 
+        %h3#sectionNameHeader.inline
+        %h3.inline -
+        %h3#submissionNameHeader.inline
+
+      %div.modal-body
+        = form_tag student_grade_path, remote:true do 
+          %div#formNameDiv
+            = hidden_field_tag 'sectionAssignmentSubmissionId'
+
+            = label_tag "Quality:"
+            = select_tag "quality", options_for_select(["excellent", "very good", "good", "satisfactory", "poor"])
+            %p
+            = label_tag "Comments:"
+            = text_area_tag "comments", nil, :class => 'form-control'
+            
+            / = label_tag "Name:", nil, :class => 'control-label'
+            /= text_field_tag "programName", nil, :class => 'form-control'
+            %span.help-block#error
+          %p
+          = submit_tag "Submit", :class => 'btn btn-default'
+      %div.modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"}
+          Close
